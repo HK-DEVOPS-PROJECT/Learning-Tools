@@ -1,0 +1,11 @@
+node {
+      stage('Preparation') {
+          echo ('This is the Preparation Stage')
+   }
+   stage('Approvals') {
+      input ('Do you want to proceed further? Could you please Approve the build')
+   }
+   stage('File_search') {
+       fileExists('cd C:Users\\hariksh\\Documents\\Clone_Repos\\scripted_pipeline.txt')
+         }
+}
