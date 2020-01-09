@@ -12,8 +12,5 @@ node {
    stage('File_search') {
        fileExists('cd C:\\Users\\hariksh\\Documents\\New_Checkout\\Git_Jenkins_Workspace\\Learning-Tools\\Jenkinsfile_scripted_pipeline.txt')
          }
-    stage('Build Job') {     
-         build job: 'CLONE_BUILD_TEST', quietPeriod: 5
     }
-}
 }
