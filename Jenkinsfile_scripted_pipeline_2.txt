@@ -1,0 +1,19 @@
+node {
+    timestamps{
+    ws ('C:\\Users\\hariksh\\Documents\\New_Checkout\\Git_Jenkins_Workspace'){
+      stage('Change Directory') {
+          echo 'File Location'
+      }
+    }
+   stage('GitSCM_Clone') {
+       checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'CleanBeforeCheckout']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'aca8bfc4-ad6f-4952-8293-7e29162129ae', url: 'https://github.com/harikiransh/Learning-Tools.git']]])
+       //NEED TO UPDATE THE "credentialsId" WHEN CREATING A NEW JOB ACCORDINGLY ALONG WITH OTHER PARAMETERS
+   }    
+   stage('File_search') {
+       fileExists('cd C:\\Users\\hariksh\\Documents\\New_Checkout\\Git_Jenkins_Workspace\\Learning-Tools\\Jenkinsfile_scripted_pipeline.txt')
+         }
+    stage('Build Job') {     
+         build job: 'CLONE_BUILD_TEST', quietPeriod: 5
+    }
+}
+}
