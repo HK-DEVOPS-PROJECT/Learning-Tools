@@ -1,10 +1,11 @@
 pipeline {
    agent any
       stages {
+       stage(timestamps)
          options {
             timestamps
             }
-      stage('Clone') {
+       stage('Clone') {
          steps {
             echo 'Provide the clone parameters'
          }
