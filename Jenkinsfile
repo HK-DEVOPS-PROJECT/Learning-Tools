@@ -1,8 +1,10 @@
 pipeline {
    agent any
-    options {
+    
+   options {
         timestamps 
     }
+   
       stages {
        stage('Clone') {
          steps {
