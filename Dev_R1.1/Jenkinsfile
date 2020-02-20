@@ -6,11 +6,11 @@ node {
       }
     }
    stage('GitSCM_Clone') {
-       checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'CleanBeforeCheckout']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'aca8bfc4-ad6f-4952-8293-7e29162129ae', url: 'https://github.com/harikiransh/Learning-Tools.git']]])
+       checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'CleanBeforeCheckout']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '90a5daa3-f555-496b-9e5f-abf31aabf8d7', url: 'https://github.com/harikiransh/Learning-Tools.git']]])
        //NEED TO UPDATE THE "credentialsId" WHEN CREATING A NEW JOB ACCORDINGLY ALONG WITH OTHER PARAMETERS
    }    
    stage('File_search') {
-       fileExists('cd C:\\Users\\hariksh\\Documents\\New_Checkout\\Git_Jenkins_Workspace\\Learning-Tools\\Jenkinsfile_scripted_pipeline.txt')
+       fileExists('cd C:\\Users\\harikiran.sh\\Documents\\New_Checkout\\Git_Jenkins_Workspace\\Learning-Tools\\Jenkinsfile_scripted_pipeline.txt')
          }
     }
 }
